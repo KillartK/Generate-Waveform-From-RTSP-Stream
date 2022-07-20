@@ -12,8 +12,7 @@ from pydub.playback import play
 import io
 import pyaudio
 
-
-# use this backend to display in separate Tk window
+# use this backend to display in separate window
 matplotlib.use("QtAgg")
 
 # RTSP URL
@@ -49,6 +48,8 @@ ax.set_xlabel('samples')
 ax.set_ylabel('amplitude')
 ax.set_ylim(-1.0, 1.0)
 ax.set_xlim(0.0, 2.0 * CHUNK)
+plt.axhline(y=0.35,linewidth=1, color='k', linestyle = 'dashed')
+plt.axhline(y=-0.35,linewidth=1, color='k', linestyle = 'dashed')
 plt.setp(ax, xticks=[0*1.0, 1.0*CHUNK, 2.0 * CHUNK], yticks=[-1.0, 0.0, 1.0])
 
 # Show the plot
