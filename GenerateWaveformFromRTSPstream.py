@@ -71,7 +71,7 @@ def plotWaveform(rtsp_stream):
         data_np = data_np.astype('float32') / 32767.0
 
         # Plot data
-        time.sleep(0.015)
+        time.sleep(0.019)
         line.set_ydata(data_np)
         try:
             fig.canvas.draw()
