@@ -6,7 +6,6 @@ import time
 import ffmpeg
 from ffpyplayer.player import MediaPlayer
 import multiprocessing
-from pydub.playback import play
 
 # use this backend to display in separate window
 matplotlib.use("tkagg")
