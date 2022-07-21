@@ -44,7 +44,6 @@ plt.show(block=False)
 def playAudio(rtsp_stream):
     player = MediaPlayer(rtsp_stream)
     return player
-
 # Capture rtsp stream and plot the waveform
 def plotWaveform(rtsp_stream):
     # Capture RTSP stream
@@ -55,7 +54,6 @@ def plotWaveform(rtsp_stream):
         .output(audio, '-', acodec = 'pcm_s16le', ar = 44100, ac = 1, format = 's16le')
         .run_async(pipe_stdout = True)
     )
-
     # for measuring frame rate
     frame_count = 0
     start_time = time.time()
@@ -68,9 +66,8 @@ def plotWaveform(rtsp_stream):
         data_np = np.frombuffer(data, dtype=np.int16)
         # Convert data to float
         data_np = data_np.astype('float32') / 32767.0
-
         # Plot data
-        time.sleep(0.019)
+        time.sleep(0.02)
         line.set_ydata(data_np)
         try:
             fig.canvas.draw()
