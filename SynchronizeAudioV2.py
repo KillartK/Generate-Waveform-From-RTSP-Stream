@@ -1,16 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-from tkinter import TclError
-import time
 import ffmpeg
-from ffpyplayer.player import MediaPlayer
-import multiprocessing
-import io
-import sys
 import pyaudio
-import subprocess as sp
-FFMPEG_BIN = "ffmpeg.exe"
+
 # use this backend to display in separate window
 matplotlib.use("tkagg")
 
@@ -63,7 +56,6 @@ audio_stream = p.open(format=pyaudio.paInt16,
                 rate=22050,
                 output=True,
                 )
- 
 
 # Plot the waveform
 def plotWaveform():
@@ -83,7 +75,7 @@ def plotWaveform():
             fig.canvas.draw()
             fig.canvas.flush_events()
         except Exception:
-            print('error')
+            print('No data captured')
             break
 if __name__ == '__main__':
     plotWaveform()
